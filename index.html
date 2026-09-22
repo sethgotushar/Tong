@@ -1,0 +1,413 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tong — Your Music, Your Choice</title>
+
+    <meta
+        name="description"
+        content="Tong is a simple and beautiful offline music player for your favorite music."
+    >
+
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- Background effects -->
+    <div class="background">
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="brand">
+            <img src="assets/logo.png" alt="Tong Logo">
+            <span>Tong</span>
+        </div>
+
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#download">Download</a>
+        </nav>
+
+        <button class="nav-button" onclick="scrollToDownload()">
+            Get Tong
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    🎵 Your music. Your choice.
+                </div>
+
+                <h1>
+                    Your Music.
+                    <span>Your Way.</span>
+                </h1>
+
+                <p>
+                    Tong is a clean, modern and powerful music player
+                    designed to keep your music with you.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-button"
+                        onclick="scrollToDownload()"
+                    >
+                        Download Tong
+                    </button>
+
+                    <a href="#features" class="secondary-button">
+                        Explore Features
+                    </a>
+
+                </div>
+
+                <div class="platforms">
+                    <span>● Android</span>
+                    <span>● Windows</span>
+                    <span>● Offline</span>
+                </div>
+
+            </div>
+
+
+            <div class="hero-image">
+
+                <div class="phone-glow"></div>
+
+                <img
+                    src="assets/app-preview.png"
+                    alt="Tong App Preview"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section id="features" class="section">
+
+            <div class="section-heading">
+
+                <p class="section-label">FEATURES</p>
+
+                <h2>
+                    Everything you need
+                    <span>for your music.</span>
+                </h2>
+
+                <p>
+                    Tong keeps your music experience simple,
+                    beautiful and completely focused on your music.
+                </p>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+
+                    <h3>Local Music</h3>
+
+                    <p>
+                        Play music stored directly on your device
+                        without depending on the internet.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+
+                    <h3>Folder Support</h3>
+
+                    <p>
+                        Select your music folder and let Tong
+                        find your songs automatically.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔀</div>
+
+                    <h3>Shuffle</h3>
+
+                    <p>
+                        Mix your music and discover songs
+                        in a different order every time.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔁</div>
+
+                    <h3>Repeat</h3>
+
+                    <p>
+                        Keep your favorite song or playlist
+                        playing as long as you want.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+
+                    <h3>Recorder</h3>
+
+                    <p>
+                        Record audio directly from your device
+                        with a simple interface.
+                    </p>
+                </div>
+
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+
+                    <h3>Fast & Simple</h3>
+
+                    <p>
+                        A lightweight interface designed to
+                        make listening to music effortless.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- APP SHOWCASE -->
+        <section class="showcase">
+
+            <div class="showcase-image">
+
+                <img
+                    src="assets/app-preview.png"
+                    alt="Tong music player"
+                >
+
+            </div>
+
+
+            <div class="showcase-content">
+
+                <p class="section-label">BUILT FOR MUSIC</p>
+
+                <h2>
+                    Your music
+                    <span>belongs to you.</span>
+                </h2>
+
+                <p>
+                    Tong focuses on your local music library.
+                    No complicated setup. No unnecessary clutter.
+                    Just your songs and a player built around them.
+                </p>
+
+
+                <div class="check-list">
+
+                    <div>
+                        <span>✓</span>
+                        Simple music library
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Background playback
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Modern interface
+                    </div>
+
+                    <div>
+                        <span>✓</span>
+                        Designed for mobile and desktop
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about section">
+
+            <div class="section-heading">
+
+                <p class="section-label">ABOUT TONG</p>
+
+                <h2>
+                    Made with passion.
+                </h2>
+
+                <p>
+                    Tong started as a project to create a music
+                    player that feels simple, modern and personal.
+                </p>
+
+            </div>
+
+
+            <div class="creator-card">
+
+                <img
+                    src="assets/avatar.png"
+                    alt="Creator"
+                >
+
+                <div>
+
+                    <p class="creator-label">
+                        CREATOR
+                    </p>
+
+                    <h3>Tushar Seth</h3>
+
+                    <p>
+                        Developer and technology enthusiast
+                        building Tong with Flutter and modern
+                        development tools.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOWNLOAD -->
+        <section id="download" class="download">
+
+            <div class="download-box">
+
+                <p class="section-label">
+                    GET TONG
+                </p>
+
+                <h2>
+                    Ready to listen?
+                </h2>
+
+                <p>
+                    Download Tong and enjoy your music
+                    your way.
+                </p>
+
+
+                <div class="download-buttons">
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        onclick="downloadAndroid(event)"
+                    >
+                        <span>📱</span>
+
+                        <div>
+                            <small>DOWNLOAD FOR</small>
+                            Android
+                        </div>
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="download-button"
+                        onclick="downloadWindows(event)"
+                    >
+                        <span>💻</span>
+
+                        <div>
+                            <small>DOWNLOAD FOR</small>
+                            Windows
+                        </div>
+                    </a>
+
+                </div>
+
+                <p class="download-note">
+                    Downloads will be available soon.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-brand">
+
+            <img src="assets/logo.png" alt="Tong">
+
+            <span>Tong</span>
+
+        </div>
+
+        <p>
+            Your Music. Your Choice.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#download">Download</a>
+
+        </div>
+
+        <p class="copyright">
+            © <span id="year"></span> Tong. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
