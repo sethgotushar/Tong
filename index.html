@@ -1,132 +1,327 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tong — Your Music, Your Choice</title>
+    <title>Tong — Your Music. Your Choice.</title>
 
     <meta
         name="description"
-        content="Tong is a simple and beautiful offline music player for your favorite music."
+        content="Tong is a modern offline music player for Android and Windows. Your music, your device, your choice."
     >
+
+    <meta name="theme-color" content="#080b18">
 
     <link rel="icon" type="image/png" href="assets/logo.png">
 
     <link rel="stylesheet" href="style.css">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 </head>
 
 <body>
 
-    <!-- Background effects -->
-    <div class="background">
-        <div class="glow glow-one"></div>
-        <div class="glow glow-two"></div>
-        <div class="glow glow-three"></div>
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background-system">
+
+        <div class="grid-overlay"></div>
+
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+
+        <div class="noise"></div>
+
     </div>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <header class="navbar">
 
-        <div class="brand">
-            <img src="assets/logo.png" alt="Tong Logo">
-            <span>Tong</span>
+        <div class="nav-inner">
+
+            <a href="#" class="brand">
+
+                <div class="brand-logo">
+                    <img src="assets/logo.png" alt="Tong Logo">
+                </div>
+
+                <div class="brand-text">
+                    <strong>Tong</strong>
+                    <span>Music Player</span>
+                </div>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="#features">Features</a>
+                <a href="#experience">Experience</a>
+                <a href="#about">About</a>
+                <a href="#download">Download</a>
+
+            </nav>
+
+
+            <a
+                href="#download"
+                class="nav-download"
+            >
+                Get Tong
+                <span>↗</span>
+            </a>
+
         </div>
-
-        <nav>
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="#download">Download</a>
-        </nav>
-
-        <button class="nav-button" onclick="scrollToDownload()">
-            Get Tong
-        </button>
 
     </header>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <main>
 
         <section class="hero">
 
             <div class="hero-content">
 
-                <div class="badge">
-                    🎵 Your music. Your choice.
+                <div class="status-pill">
+
+                    <span class="status-dot"></span>
+
+                    <span>Available for Android & Windows</span>
+
                 </div>
 
+
                 <h1>
+
                     Your Music.
-                    <span>Your Way.</span>
+                    <span>Your Choice.</span>
+
                 </h1>
 
-                <p>
-                    Tong is a clean, modern and powerful music player
-                    designed to keep your music with you.
+
+                <p class="hero-description">
+
+                    A clean, modern and powerful music player
+                    built around one simple idea —
+
+                    <strong>your music should stay yours.</strong>
+
                 </p>
 
-                <div class="hero-buttons">
 
-                    <button
-                        class="primary-button"
-                        onclick="scrollToDownload()"
+                <div class="hero-actions">
+
+                    <a
+                        href="#download"
+                        class="button button-primary"
                     >
-                        Download Tong
-                    </button>
+                        <span>Download Tong</span>
+                        <span class="button-arrow">↓</span>
+                    </a>
 
-                    <a href="#features" class="secondary-button">
-                        Explore Features
+
+                    <a
+                        href="#features"
+                        class="button button-secondary"
+                    >
+                        Explore features
+                        <span>→</span>
                     </a>
 
                 </div>
 
-                <div class="platforms">
-                    <span>● Android</span>
-                    <span>● Windows</span>
-                    <span>● Offline</span>
+
+                <div class="hero-meta">
+
+                    <div>
+                        <span class="meta-icon">◉</span>
+                        Offline-first
+                    </div>
+
+                    <div>
+                        <span class="meta-icon">◈</span>
+                        No complicated setup
+                    </div>
+
+                    <div>
+                        <span class="meta-icon">✦</span>
+                        Mobile + Desktop
+                    </div>
+
                 </div>
 
             </div>
 
 
-            <div class="hero-image">
+            <!-- APP PREVIEW -->
 
-                <div class="phone-glow"></div>
+            <div class="hero-visual">
 
-                <img
-                    src="assets/app-preview.jpeg"
-                    alt="Tong App Preview"
-                >
+                <div class="visual-glow"></div>
+
+                <div class="visual-ring ring-one"></div>
+                <div class="visual-ring ring-two"></div>
+
+                <div class="app-window">
+
+                    <div class="window-top">
+
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span class="window-title">
+                            Tong
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-image">
+
+                        <img
+                            src="assets/app-preview.jpeg"
+                            alt="Tong music player preview"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card floating-card-one">
+
+                    <span class="floating-icon">♫</span>
+
+                    <div>
+                        <small>NOW PLAYING</small>
+                        <strong>Your music</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card floating-card-two">
+
+                    <span class="check-icon">✓</span>
+
+                    <div>
+                        <small>MODE</small>
+                        <strong>Offline</strong>
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- FEATURES -->
-        <section id="features" class="section">
+        <!-- =========================
+             TRUST / PRODUCT BAR
+        ========================== -->
+
+        <section class="product-bar">
+
+            <div class="product-bar-inner">
+
+                <div class="product-item">
+
+                    <span class="product-number">01</span>
+
+                    <div>
+                        <strong>Local-first</strong>
+                        <small>Your music stays on your device</small>
+                    </div>
+
+                </div>
+
+
+                <div class="product-divider"></div>
+
+
+                <div class="product-item">
+
+                    <span class="product-number">02</span>
+
+                    <div>
+                        <strong>Simple library</strong>
+                        <small>Choose your folder and start listening</small>
+                    </div>
+
+                </div>
+
+
+                <div class="product-divider"></div>
+
+
+                <div class="product-item">
+
+                    <span class="product-number">03</span>
+
+                    <div>
+                        <strong>Cross-platform</strong>
+                        <small>Android and Windows</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section
+            id="features"
+            class="section features-section"
+        >
 
             <div class="section-heading">
 
-                <p class="section-label">FEATURES</p>
+                <div class="eyebrow">
+                    CORE FEATURES
+                </div>
 
                 <h2>
-                    Everything you need
-                    <span>for your music.</span>
+                    Built around
+                    <span>your listening.</span>
                 </h2>
 
                 <p>
-                    Tong keeps your music experience simple,
-                    beautiful and completely focused on your music.
+                    Everything you need for a clean,
+                    distraction-free music experience.
                 </p>
 
             </div>
@@ -134,131 +329,249 @@
 
             <div class="features-grid">
 
-                <div class="feature-card">
-                    <div class="feature-icon">🎵</div>
+                <article class="feature-card feature-large">
 
-                    <h3>Local Music</h3>
+                    <div class="feature-number">
+                        01
+                    </div>
 
-                    <p>
-                        Play music stored directly on your device
-                        without depending on the internet.
-                    </p>
-                </div>
+                    <div class="feature-icon">
+                        ♫
+                    </div>
 
-
-                <div class="feature-card">
-                    <div class="feature-icon">📁</div>
-
-                    <h3>Folder Support</h3>
+                    <h3>
+                        Your Local Music
+                    </h3>
 
                     <p>
-                        Select your music folder and let Tong
-                        find your songs automatically.
+                        Play music stored directly on your
+                        device without relying on an online
+                        music service.
                     </p>
-                </div>
+
+                    <div class="feature-line"></div>
+
+                </article>
 
 
-                <div class="feature-card">
-                    <div class="feature-icon">🔀</div>
+                <article class="feature-card">
 
-                    <h3>Shuffle</h3>
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <div class="feature-icon">
+                        ⌁
+                    </div>
+
+                    <h3>
+                        Folder Support
+                    </h3>
 
                     <p>
-                        Mix your music and discover songs
-                        in a different order every time.
+                        Select your music folder and keep
+                        your library organized around the
+                        way you already store your songs.
                     </p>
-                </div>
+
+                    <div class="feature-line"></div>
+
+                </article>
 
 
-                <div class="feature-card">
-                    <div class="feature-icon">🔁</div>
+                <article class="feature-card">
 
-                    <h3>Repeat</h3>
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <div class="feature-icon">
+                        ⤨
+                    </div>
+
+                    <h3>
+                        Shuffle
+                    </h3>
 
                     <p>
-                        Keep your favorite song or playlist
-                        playing as long as you want.
+                        Change the order and let your
+                        collection surprise you.
                     </p>
-                </div>
+
+                    <div class="feature-line"></div>
+
+                </article>
 
 
-                <div class="feature-card">
-                    <div class="feature-icon">🎙️</div>
+                <article class="feature-card">
 
-                    <h3>Recorder</h3>
+                    <div class="feature-number">
+                        04
+                    </div>
+
+                    <div class="feature-icon">
+                        ↻
+                    </div>
+
+                    <h3>
+                        Repeat
+                    </h3>
 
                     <p>
-                        Record audio directly from your device
-                        with a simple interface.
+                        Keep your favorite track or music
+                        playing whenever you want.
                     </p>
-                </div>
+
+                    <div class="feature-line"></div>
+
+                </article>
 
 
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                <article class="feature-card">
 
-                    <h3>Fast & Simple</h3>
+                    <div class="feature-number">
+                        05
+                    </div>
+
+                    <div class="feature-icon">
+                        ◉
+                    </div>
+
+                    <h3>
+                        Recorder
+                    </h3>
 
                     <p>
-                        A lightweight interface designed to
-                        make listening to music effortless.
+                        Record audio through a simple,
+                        focused interface.
                     </p>
-                </div>
+
+                    <div class="feature-line"></div>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <div class="feature-number">
+                        06
+                    </div>
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Fast & Simple
+                    </h3>
+
+                    <p>
+                        A lightweight experience without
+                        unnecessary clutter.
+                    </p>
+
+                    <div class="feature-line"></div>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- APP SHOWCASE -->
-        <section class="showcase">
+        <!-- =========================
+             EXPERIENCE / SHOWCASE
+        ========================== -->
 
-            <div class="showcase-image">
+        <section
+            id="experience"
+            class="experience-section"
+        >
 
-                <img
-                    src="assets/app-preview.jpeg"
-                    alt="Tong music player"
-                >
+            <div class="experience-visual">
+
+                <div class="experience-glow"></div>
+
+                <div class="experience-frame">
+
+                    <img
+                        src="assets/app-preview.jpeg"
+                        alt="Tong application interface"
+                    >
+
+                </div>
 
             </div>
 
 
-            <div class="showcase-content">
+            <div class="experience-content">
 
-                <p class="section-label">BUILT FOR MUSIC</p>
+                <div class="eyebrow">
+                    THE TONG EXPERIENCE
+                </div>
 
                 <h2>
-                    Your music
-                    <span>belongs to you.</span>
+                    Less clutter.
+                    <span>More music.</span>
                 </h2>
 
                 <p>
-                    Tong focuses on your local music library.
-                    No complicated setup. No unnecessary clutter.
-                    Just your songs and a player built around them.
+                    Tong is designed to stay out of the way.
+                    Your library, your controls and your music
+                    remain at the center of the experience.
                 </p>
 
 
-                <div class="check-list">
+                <div class="experience-list">
 
-                    <div>
-                        <span>✓</span>
-                        Simple music library
+                    <div class="experience-item">
+
+                        <span class="experience-check">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>Background playback</strong>
+                            <p>
+                                Keep listening while using
+                                other parts of your device.
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <span>✓</span>
-                        Background playback
+
+                    <div class="experience-item">
+
+                        <span class="experience-check">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>Modern interface</strong>
+                            <p>
+                                Designed with a clean,
+                                focused visual language.
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <span>✓</span>
-                        Modern interface
-                    </div>
 
-                    <div>
-                        <span>✓</span>
-                        Designed for mobile and desktop
+                    <div class="experience-item">
+
+                        <span class="experience-check">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>Mobile & desktop</strong>
+                            <p>
+                                Use Tong across your Android
+                                and Windows devices.
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
@@ -268,20 +581,30 @@
         </section>
 
 
-        <!-- ABOUT -->
-        <section id="about" class="about section">
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section
+            id="about"
+            class="section about-section"
+        >
 
             <div class="section-heading">
 
-                <p class="section-label">ABOUT TONG</p>
+                <div class="eyebrow">
+                    THE STORY
+                </div>
 
                 <h2>
-                    Made with passion.
+                    Built because
+                    <span>simple feels better.</span>
                 </h2>
 
                 <p>
-                    Tong started as a project to create a music
-                    player that feels simple, modern and personal.
+                    Tong started as a project to build a
+                    personal music player that feels modern,
+                    useful and genuinely enjoyable to use.
                 </p>
 
             </div>
@@ -289,18 +612,25 @@
 
             <div class="creator-card">
 
-                <img
-                    src="assets/avatar.jpg"
-                    alt="Creator"
-                >
+                <div class="creator-image">
 
-                <div>
+                    <img
+                        src="assets/avatar.jpg"
+                        alt="Tushar Seth"
+                    >
 
-                    <p class="creator-label">
+                </div>
+
+
+                <div class="creator-content">
+
+                    <span class="creator-label">
                         CREATOR
-                    </p>
+                    </span>
 
-                    <h3>Tushar Seth</h3>
+                    <h3>
+                        Tushar Seth
+                    </h3>
 
                     <p>
                         Developer and technology enthusiast
@@ -308,6 +638,20 @@
                         development tools.
                     </p>
 
+
+                    <div class="creator-tags">
+
+                        <span>Flutter</span>
+                        <span>Development</span>
+                        <span>Technology</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="creator-mark">
+                    T
                 </div>
 
             </div>
@@ -315,59 +659,153 @@
         </section>
 
 
-        <!-- DOWNLOAD -->
-        <section id="download" class="download">
+        <!-- =========================
+             DOWNLOAD
+        ========================== -->
 
-            <div class="download-box">
+        <section
+            id="download"
+            class="download-section"
+        >
 
-                <p class="section-label">
+            <div class="download-background"></div>
+
+
+            <div class="download-content">
+
+                <div class="eyebrow">
                     GET TONG
-                </p>
+                </div>
 
                 <h2>
-                    Ready to listen?
+                    Your music is ready.
                 </h2>
 
                 <p>
-                    Download Tong and enjoy your music
-                    your way.
+                    Choose your platform and start
+                    listening your way.
                 </p>
 
 
-                <div class="download-buttons">
+                <div class="download-grid">
+
+
+                    <!-- ANDROID -->
 
                     <a
-                        href="#"
-                        class="download-button"
-                        onclick="downloadAndroid(event)"
+                        class="download-card"
+                        href="https://github.com/sethgotushar/Tong/releases/download/v1.0.0/Tong.apk"
+                        download
                     >
-                        <span>📱</span>
 
-                        <div>
-                            <small>DOWNLOAD FOR</small>
-                            Android
+                        <div class="download-card-top">
+
+                            <div class="platform-icon">
+                                ◉
+                            </div>
+
+                            <span class="download-arrow">
+                                ↗
+                            </span>
+
                         </div>
+
+
+                        <div class="download-card-info">
+
+                            <span class="platform-label">
+                                MOBILE
+                            </span>
+
+                            <h3>
+                                Android
+                            </h3>
+
+                            <p>
+                                Download the Tong APK
+                                for Android devices.
+                            </p>
+
+                        </div>
+
+
+                        <div class="download-card-footer">
+
+                            <span>
+                                APK
+                            </span>
+
+                            <strong>
+                                Download →
+                            </strong>
+
+                        </div>
+
                     </a>
 
 
-                    <a
-                        href="#"
-                        class="download-button"
-                        onclick="downloadWindows(event)"
-                    >
-                        <span>💻</span>
+                    <!-- WINDOWS -->
 
-                        <div>
-                            <small>DOWNLOAD FOR</small>
-                            Windows
+                    <a
+                        class="download-card"
+                        href="https://github.com/sethgotushar/Tong/releases/latest/download/Tong-Windows.zip"
+                    >
+
+                        <div class="download-card-top">
+
+                            <div class="platform-icon">
+                                ▣
+                            </div>
+
+                            <span class="download-arrow">
+                                ↗
+                            </span>
+
                         </div>
+
+
+                        <div class="download-card-info">
+
+                            <span class="platform-label">
+                                DESKTOP
+                            </span>
+
+                            <h3>
+                                Windows
+                            </h3>
+
+                            <p>
+                                Download Tong for your
+                                Windows computer.
+                            </p>
+
+                        </div>
+
+
+                        <div class="download-card-footer">
+
+                            <span>
+                                ZIP
+                            </span>
+
+                            <strong>
+                                Download →
+                            </strong>
+
+                        </div>
+
                     </a>
 
                 </div>
 
-                <p class="download-note">
-                    Downloads will be available soon.
-                </p>
+
+                <div class="download-note">
+
+                    <span>●</span>
+
+                    Latest Tong release · Android + Windows
+
+                </div>
 
             </div>
 
@@ -376,37 +814,127 @@
     </main>
 
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-        <div class="footer-brand">
+    <footer class="footer">
 
-            <img src="assets/logo.png" alt="Tong">
+        <div class="footer-top">
 
-            <span>Tong</span>
+            <a href="#" class="footer-brand">
+
+                <img
+                    src="assets/logo.png"
+                    alt="Tong"
+                >
+
+                <div>
+
+                    <strong>Tong</strong>
+
+                    <span>
+                        Your Music. Your Choice.
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <div class="footer-navigation">
+
+                <a href="#features">
+                    Features
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#download">
+                    Download
+                </a>
+
+            </div>
 
         </div>
 
-        <p>
-            Your Music. Your Choice.
-        </p>
 
-        <div class="footer-links">
+        <div class="footer-bottom">
 
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-            <a href="#download">Download</a>
+            <span>
+                © <span id="year"></span> Tong
+            </span>
+
+            <span>
+                Built with Flutter & curiosity.
+            </span>
 
         </div>
-
-        <p class="copyright">
-            © <span id="year"></span> Tong. All rights reserved.
-        </p>
 
     </footer>
 
 
-    <script src="script.js"></script>
+    <script>
+
+        const yearElement =
+            document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.textContent =
+                new Date().getFullYear();
+        }
+
+
+        /* Smooth scrolling */
+
+        document.querySelectorAll(
+            'a[href^="#"]'
+        ).forEach(link => {
+
+            link.addEventListener("click", function(e) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if (target) {
+
+                    e.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            });
+
+        });
+
+
+        /* Navbar scroll effect */
+
+        const navbar =
+            document.querySelector(".navbar");
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 40) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
