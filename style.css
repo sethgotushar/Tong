@@ -1,9 +1,11 @@
 /* =========================================================
-   TONG — PROFESSIONAL MUSIC PLAYER WEBSITE
+   TONG — PROFESSIONAL LANDING PAGE
    ========================================================= */
 
 
-/* ================= RESET ================= */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -13,25 +15,30 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;
+    scroll-padding-top: 100px;
 }
 
 body {
     min-height: 100vh;
 
-    font-family: "Inter", sans-serif;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-    color: #f6f7ff;
+    color: #f7f7ff;
 
     background:
         radial-gradient(
             circle at 15% 10%,
-            rgba(105, 67, 255, 0.16),
+            rgba(104, 72, 255, 0.15),
             transparent 32%
         ),
         radial-gradient(
-            circle at 85% 20%,
-            rgba(30, 145, 255, 0.12),
+            circle at 85% 18%,
+            rgba(35, 140, 255, 0.10),
             transparent 30%
         ),
         #06070d;
@@ -44,14 +51,14 @@ a {
     text-decoration: none;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
 img {
     max-width: 100%;
     display: block;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -64,7 +71,7 @@ img {
 
     inset: 0;
 
-    z-index: -10;
+    z-index: -20;
 
     pointer-events: none;
 
@@ -76,7 +83,7 @@ img {
 
     inset: 0;
 
-    opacity: 0.20;
+    opacity: 0.16;
 
     background-image:
         linear-gradient(
@@ -94,7 +101,7 @@ img {
     mask-image:
         linear-gradient(
             to bottom,
-            black,
+            black 0%,
             transparent 90%
         );
 }
@@ -104,44 +111,47 @@ img {
 
     border-radius: 50%;
 
-    filter: blur(90px);
+    filter: blur(95px);
 
-    opacity: 0.35;
+    opacity: 0.32;
 
     animation:
         orbFloat 12s ease-in-out infinite;
 }
 
 .orb-one {
-    width: 420px;
-    height: 420px;
+    width: 430px;
+    height: 430px;
 
-    top: -160px;
-    left: -120px;
+    left: -150px;
+    top: -170px;
 
-    background: rgba(101, 62, 255, 0.35);
+    background:
+        rgba(101, 63, 255, 0.34);
 }
 
 .orb-two {
-    width: 360px;
-    height: 360px;
+    width: 380px;
+    height: 380px;
 
-    right: -100px;
-    top: 25%;
+    right: -130px;
+    top: 28%;
 
-    background: rgba(0, 145, 255, 0.28);
+    background:
+        rgba(0, 145, 255, 0.25);
 
     animation-delay: -4s;
 }
 
 .orb-three {
-    width: 330px;
-    height: 330px;
+    width: 350px;
+    height: 350px;
 
     left: 30%;
-    bottom: -180px;
+    bottom: -190px;
 
-    background: rgba(155, 65, 255, 0.25);
+    background:
+        rgba(157, 66, 255, 0.22);
 
     animation-delay: -7s;
 }
@@ -150,60 +160,106 @@ img {
 
     0%,
     100% {
-        transform: translate3d(0, 0, 0);
+        transform:
+            translate3d(0, 0, 0);
     }
 
     50% {
-        transform: translate3d(0, -30px, 0);
+        transform:
+            translate3d(0, -30px, 0);
     }
-
 }
 
 
 /* =========================================================
-   NAVBAR
+   TOP FLOATING NAVBAR
    ========================================================= */
 
 .navbar {
     position: fixed;
 
-    top: 0;
-    left: 0;
+    top: 20px;
+    left: 50%;
 
-    width: 100%;
+    width: min(
+        900px,
+        calc(100% - 40px)
+    );
+
+    height: 64px;
 
     z-index: 100;
 
-    background: rgba(6, 7, 13, 0.58);
+    transform:
+        translateX(-50%);
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.055);
+    border-radius: 22px;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    background:
+        rgba(13, 14, 24, 0.68);
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    backdrop-filter:
+        blur(24px);
+
+    -webkit-backdrop-filter:
+        blur(24px);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.06);
 
     transition:
         background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 21px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(124,96,255,0.08),
+            transparent 38%,
+            rgba(71,166,255,0.05)
+        );
 }
 
 .navbar.scrolled {
-    background: rgba(6, 7, 13, 0.88);
+    background:
+        rgba(9, 10, 18, 0.86);
 
-    border-bottom-color:
-        rgba(255, 255, 255, 0.09);
+    border-color:
+        rgba(255,255,255,0.13);
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.25);
+        0 20px 55px rgba(0,0,0,0.38),
+        inset 0 1px 0 rgba(255,255,255,0.07);
 }
 
 .nav-container {
-    width: min(1180px, calc(100% - 40px));
+    position: relative;
 
-    height: 76px;
+    z-index: 2;
 
-    margin: auto;
+    width: 100%;
+
+    height: 100%;
+
+    padding:
+        0 10px 0 18px;
 
     display: flex;
 
@@ -212,14 +268,21 @@ img {
     justify-content: space-between;
 }
 
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
 .brand {
     display: flex;
 
     align-items: center;
 
-    gap: 11px;
+    gap: 9px;
 
-    font-size: 20px;
+    flex-shrink: 0;
+
+    font-size: 18px;
 
     font-weight: 800;
 
@@ -227,35 +290,47 @@ img {
 }
 
 .brand-logo {
-    width: 34px;
-    height: 34px;
+    width: 35px;
+    height: 35px;
 
     object-fit: contain;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
     box-shadow:
-        0 0 25px rgba(112, 74, 255, 0.35);
+        0 0 25px rgba(112,74,255,0.35);
 }
+
+
+/* =========================================================
+   NAVIGATION LINKS
+   ========================================================= */
 
 .nav-links {
     display: flex;
 
     align-items: center;
 
-    gap: 34px;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-left: auto;
+    margin-right: 22px;
 }
 
 .nav-links a {
     position: relative;
 
+    padding: 7px 0;
+
     color: #989cac;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 500;
+    font-weight: 600;
 
-    padding: 8px 0;
+    white-space: nowrap;
 
     transition:
         color 0.2s ease;
@@ -272,16 +347,17 @@ img {
     width: 0;
     height: 2px;
 
-    border-radius: 10px;
+    border-radius: 20px;
 
     background:
         linear-gradient(
             90deg,
-            #765cff,
+            #755aff,
             #5db8ff
         );
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     transition:
         width 0.25s ease;
@@ -292,75 +368,83 @@ img {
 }
 
 .nav-links a:hover::after {
-    width: 70%;
+    width: 65%;
 }
 
+
+/* =========================================================
+   NAV GET TONG BUTTON
+   ========================================================= */
+
 .nav-button {
+    position: relative;
+
     display: inline-flex;
 
     align-items: center;
 
-    gap: 8px;
+    justify-content: center;
 
-    padding: 10px 16px;
+    gap: 7px;
 
-    border-radius: 10px;
+    flex-shrink: 0;
+
+    padding:
+        9px 14px;
+
+    border-radius: 12px;
+
+    color: #f2f2ff;
 
     background:
         linear-gradient(
             135deg,
-            rgba(112, 84, 255, 0.18),
-            rgba(62, 132, 255, 0.12)
+            rgba(113,83,255,0.30),
+            rgba(56,131,255,0.20)
         );
 
     border:
-        1px solid rgba(125, 105, 255, 0.22);
+        1px solid rgba(132,111,255,0.28);
 
-    color: #e8e9f2;
+    font-size: 10px;
 
-    font-size: 13px;
-
-    font-weight: 600;
+    font-weight: 700;
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.05),
-        0 8px 25px rgba(74, 72, 180, 0.08);
+        0 8px 25px rgba(74,72,180,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.07);
 
     transition:
         transform 0.2s ease,
         background 0.2s ease,
-        border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
 
 .nav-button:hover {
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
     background:
         linear-gradient(
             135deg,
-            rgba(112, 84, 255, 0.28),
-            rgba(62, 132, 255, 0.20)
+            rgba(118,88,255,0.40),
+            rgba(62,139,255,0.28)
         );
 
-    border-color:
-        rgba(140, 120, 255, 0.38);
-
     box-shadow:
-        0 10px 30px rgba(82, 76, 220, 0.18);
+        0 12px 32px rgba(82,76,220,0.22);
 }
 
 .nav-button span {
-    color: #9c8cff;
-
-    font-size: 14px;
+    color: #a796ff;
 
     transition:
         transform 0.2s ease;
 }
 
 .nav-button:hover span {
-    transform: translate(2px, -2px);
+    transform:
+        translate(2px,-2px);
 }
 
 
@@ -369,29 +453,33 @@ img {
    ========================================================= */
 
 .hero {
-    width: min(1180px, calc(100% - 40px));
+    width:
+        min(1180px, calc(100% - 40px));
 
-    min-height: 720px;
+    min-height: 790px;
 
-    margin: auto;
+    margin:
+        0 auto;
 
-    padding-top: 120px;
+    padding-top: 145px;
+
+    padding-bottom: 70px;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(380px, 0.92fr);
+        minmax(0, 1.05fr)
+        minmax(400px, 0.95fr);
 
     align-items: center;
 
-    gap: 45px;
+    gap: 55px;
 }
 
 .hero-content {
     position: relative;
 
-    z-index: 3;
+    z-index: 5;
 }
 
 .hero-badge {
@@ -401,21 +489,22 @@ img {
 
     gap: 8px;
 
-    padding: 8px 12px;
+    padding:
+        8px 13px;
 
     margin-bottom: 23px;
 
     border-radius: 100px;
 
-    border:
-        1px solid rgba(128, 104, 255, 0.2);
+    color: #adb1c4;
 
     background:
-        rgba(95, 70, 255, 0.07);
+        rgba(95,70,255,0.07);
 
-    color: #aeb2c5;
+    border:
+        1px solid rgba(128,104,255,0.20);
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 600;
 
@@ -447,11 +536,12 @@ img {
     50% {
         opacity: 0.4;
     }
-
 }
 
 .hero h1 {
     max-width: 700px;
+
+    margin-bottom: 26px;
 
     font-size:
         clamp(52px, 6.5vw, 88px);
@@ -461,8 +551,6 @@ img {
     letter-spacing: -5px;
 
     font-weight: 800;
-
-    margin-bottom: 26px;
 }
 
 .hero h1 span {
@@ -484,15 +572,15 @@ img {
 }
 
 .hero-description {
-    max-width: 590px;
+    max-width: 580px;
+
+    margin-bottom: 31px;
 
     color: #989cac;
 
-    font-size: 16px;
+    font-size: 15px;
 
     line-height: 1.75;
-
-    margin-bottom: 31px;
 }
 
 .hero-actions {
@@ -500,9 +588,9 @@ img {
 
     align-items: center;
 
-    gap: 12px;
-
     flex-wrap: wrap;
+
+    gap: 12px;
 
     margin-bottom: 40px;
 }
@@ -517,11 +605,12 @@ img {
 
     gap: 10px;
 
-    padding: 14px 20px;
+    padding:
+        14px 20px;
 
     border-radius: 12px;
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -542,28 +631,30 @@ img {
         );
 
     box-shadow:
-        0 12px 35px rgba(80, 85, 255, 0.23);
+        0 12px 35px rgba(80,85,255,0.23);
 }
 
 .primary-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 17px 45px rgba(80, 85, 255, 0.35);
+        0 17px 45px rgba(80,85,255,0.35);
 }
 
 .secondary-button {
-    border:
-        1px solid rgba(255,255,255,0.1);
+    color: #d5d7e1;
 
     background:
         rgba(255,255,255,0.035);
 
-    color: #d5d7e1;
+    border:
+        1px solid rgba(255,255,255,0.10);
 }
 
 .secondary-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
 
     background:
         rgba(255,255,255,0.07);
@@ -609,21 +700,21 @@ img {
 .meta-item strong {
     display: block;
 
+    color: #e5e7ef;
+
     font-size: 10px;
 
     font-weight: 700;
-
-    color: #e5e7ef;
 }
 
 .meta-item small {
     display: block;
 
+    margin-top: 2px;
+
     color: #737789;
 
     font-size: 8px;
-
-    margin-top: 2px;
 }
 
 .meta-line {
@@ -637,13 +728,13 @@ img {
 
 
 /* =========================================================
-   HERO VISUAL
+   HERO APP AREA
    ========================================================= */
 
 .hero-visual {
     position: relative;
 
-    height: 560px;
+    height: 650px;
 
     display: flex;
 
@@ -651,26 +742,28 @@ img {
 
     justify-content: center;
 
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 90px;
+
+    padding-bottom: 90px;
 }
 
 .visual-glow {
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: 310px;
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(99,78,255,0.26),
+            rgba(99,78,255,0.28),
             transparent 68%
         );
 
-    filter: blur(20px);
+    filter:
+        blur(20px);
 }
 
 .visual-ring {
@@ -680,8 +773,6 @@ img {
 
     border:
         1px solid rgba(118,99,255,0.11);
-
-    transform: rotate(-15deg);
 }
 
 .ring-one {
@@ -693,8 +784,8 @@ img {
 }
 
 .ring-two {
-    width: 435px;
-    height: 435px;
+    width: 455px;
+    height: 455px;
 
     border-color:
         rgba(50,158,255,0.07);
@@ -706,30 +797,32 @@ img {
 @keyframes ringSpin {
 
     from {
-        transform: rotate(0deg);
+        transform:
+            rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
-
 }
 
 @keyframes ringSpinReverse {
 
     from {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 
     to {
-        transform: rotate(0deg);
+        transform:
+            rotate(0deg);
     }
-
 }
 
 
 /* =========================================================
-   APP PREVIEW
+   APP WINDOW
    ========================================================= */
 
 .app-window {
@@ -737,10 +830,7 @@ img {
 
     z-index: 4;
 
-    width: 285px;
-
-    margin-top: 5px;
-    margin-bottom: 5px;
+    width: 275px;
 
     border-radius: 19px;
 
@@ -768,13 +858,14 @@ img {
 
     0%,
     100% {
-        transform: translateY(0px);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-12px);
+        transform:
+            translateY(-12px);
     }
-
 }
 
 .app-window-bar {
@@ -796,7 +887,7 @@ img {
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,0.2);
+        rgba(255,255,255,0.20);
 }
 
 .app-preview-wrapper {
@@ -809,7 +900,6 @@ img {
 
 .app-preview {
     width: 100%;
-
     height: auto;
 
     display: block;
@@ -823,7 +913,7 @@ img {
 .floating-card {
     position: absolute;
 
-    z-index: 6;
+    z-index: 8;
 
     display: flex;
 
@@ -831,18 +921,22 @@ img {
 
     gap: 8px;
 
-    padding: 9px 11px;
+    padding:
+        9px 11px;
 
     border-radius: 12px;
 
     background:
-        rgba(13,14,24,0.78);
+        rgba(13,14,24,0.82);
 
     border:
-        1px solid rgba(255,255,255,0.1);
+        1px solid rgba(255,255,255,0.10);
 
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
 
     box-shadow:
         0 18px 45px rgba(0,0,0,0.35);
@@ -852,30 +946,32 @@ img {
 }
 
 .card-top {
-    top: 38px;
+    top: 18px;
 
-    right: 0;
+    right: -8px;
 }
 
 .card-bottom {
-    bottom: 38px;
+    bottom: 18px;
 
-    left: 0;
+    left: -8px;
 
-    animation-delay: -2s;
+    animation-delay:
+        -2s;
 }
 
 @keyframes cardFloat {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-7px);
+        transform:
+            translateY(-7px);
     }
-
 }
 
 .mini-icon {
@@ -885,6 +981,8 @@ img {
     display: grid;
 
     place-items: center;
+
+    flex-shrink: 0;
 
     border-radius: 8px;
 
@@ -899,21 +997,21 @@ img {
 .floating-card strong {
     display: block;
 
+    color: #e6e8f0;
+
     font-size: 9px;
 
     font-weight: 700;
-
-    color: #e6e8f0;
 }
 
 .floating-card small {
     display: block;
 
-    font-size: 7px;
+    margin-top: 2px;
 
     color: #72778b;
 
-    margin-top: 2px;
+    font-size: 7px;
 }
 
 
@@ -922,13 +1020,16 @@ img {
    ========================================================= */
 
 .product-bar {
-    width: min(1000px, calc(100% - 40px));
-
-    margin: 15px auto 0;
+    width:
+        min(1000px, calc(100% - 40px));
 
     min-height: 78px;
 
-    padding: 13px 22px;
+    margin:
+        0 auto;
+
+    padding:
+        13px 22px;
 
     display: flex;
 
@@ -938,16 +1039,19 @@ img {
 
     gap: 22px;
 
-    border:
-        1px solid rgba(255,255,255,0.07);
-
     border-radius: 17px;
 
     background:
         rgba(255,255,255,0.025);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
 }
 
 .product-item {
@@ -971,7 +1075,7 @@ img {
     color: #a895ff;
 
     background:
-        rgba(107,84,255,0.1);
+        rgba(107,84,255,0.10);
 }
 
 .product-item strong {
@@ -983,29 +1087,29 @@ img {
 .product-item small {
     display: block;
 
+    margin-top: 2px;
+
     color: #707588;
 
     font-size: 8px;
-
-    margin-top: 2px;
 }
 
 .product-stat strong {
     display: block;
 
-    font-size: 11px;
-
     color: #dfe1e9;
+
+    font-size: 11px;
 }
 
 .product-stat span {
     display: block;
 
+    margin-top: 2px;
+
     color: #686d80;
 
     font-size: 8px;
-
-    margin-top: 2px;
 }
 
 .product-divider {
@@ -1023,9 +1127,11 @@ img {
    ========================================================= */
 
 .section {
-    width: min(1180px, calc(100% - 40px));
+    width:
+        min(1180px, calc(100% - 40px));
 
-    margin: auto;
+    margin:
+        0 auto;
 
     padding-top: 145px;
 }
@@ -1037,6 +1143,8 @@ img {
 }
 
 .section-label {
+    margin-bottom: 14px;
+
     color: #8572ff;
 
     font-size: 10px;
@@ -1044,22 +1152,20 @@ img {
     font-weight: 800;
 
     letter-spacing: 2px;
-
-    margin-bottom: 14px;
 }
 
 .section-heading h2,
 .experience-content h2,
 .download-heading h2,
 .about-content h2 {
+    margin-bottom: 18px;
+
     font-size:
         clamp(35px, 4vw, 56px);
 
     line-height: 1.05;
 
     letter-spacing: -2.5px;
-
-    margin-bottom: 18px;
 }
 
 .section-heading h2 span,
@@ -1095,18 +1201,15 @@ img {
 }
 
 .feature-card {
+    position: relative;
+
     min-height: 260px;
 
     padding: 27px;
 
-    position: relative;
-
     overflow: hidden;
 
     border-radius: 18px;
-
-    border:
-        1px solid rgba(255,255,255,0.07);
 
     background:
         linear-gradient(
@@ -1115,13 +1218,17 @@ img {
             rgba(255,255,255,0.018)
         );
 
+    border:
+        1px solid rgba(255,255,255,0.07);
+
     transition:
         transform 0.25s ease,
         border-color 0.25s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform:
+        translateY(-5px);
 
     border-color:
         rgba(139,119,255,0.25);
@@ -1135,19 +1242,19 @@ img {
 
     place-items: center;
 
+    margin-bottom: 28px;
+
     border-radius: 12px;
 
     color: #a899ff;
 
     background:
-        rgba(111,85,255,0.1);
+        rgba(111,85,255,0.10);
 
     border:
         1px solid rgba(111,85,255,0.13);
 
     font-size: 17px;
-
-    margin-bottom: 28px;
 }
 
 .feature-number {
@@ -1183,9 +1290,9 @@ img {
 .feature-highlight {
     display: flex;
 
-    justify-content: space-between;
-
     align-items: flex-end;
+
+    justify-content: space-between;
 
     background:
         radial-gradient(
@@ -1197,27 +1304,22 @@ img {
 }
 
 .feature-highlight-content h3 {
-    font-size: 20px;
-
     margin-bottom: 8px;
+
+    font-size: 20px;
 }
 
 .highlight-circle {
     width: 90px;
     height: 90px;
 
-    border-radius: 50%;
-
     display: grid;
 
     place-items: center;
 
-    font-size: 25px;
+    border-radius: 50%;
 
     color: #a899ff;
-
-    border:
-        1px solid rgba(132,111,255,0.18);
 
     background:
         radial-gradient(
@@ -1226,8 +1328,13 @@ img {
             transparent 68%
         );
 
+    border:
+        1px solid rgba(132,111,255,0.18);
+
     box-shadow:
         0 0 50px rgba(108,83,255,0.12);
+
+    font-size: 25px;
 }
 
 
@@ -1242,9 +1349,9 @@ img {
         minmax(0, 1fr)
         minmax(320px, 0.8fr);
 
-    gap: 70px;
-
     align-items: center;
+
+    gap: 70px;
 }
 
 .experience-content > p {
@@ -1268,18 +1375,18 @@ img {
 
     border-radius: 14px;
 
-    border:
-        1px solid rgba(255,255,255,0.055);
-
     background:
         rgba(255,255,255,0.025);
+
+    border:
+        1px solid rgba(255,255,255,0.055);
 }
 
 .point-icon {
-    flex-shrink: 0;
-
     width: 33px;
     height: 33px;
+
+    flex-shrink: 0;
 
     display: grid;
 
@@ -1290,7 +1397,7 @@ img {
     color: #9181ff;
 
     background:
-        rgba(105,81,255,0.1);
+        rgba(105,81,255,0.10);
 
     font-size: 9px;
 
@@ -1298,9 +1405,9 @@ img {
 }
 
 .experience-point h3 {
-    font-size: 12px;
-
     margin-bottom: 5px;
+
+    font-size: 12px;
 }
 
 .experience-point p {
@@ -1319,12 +1426,9 @@ img {
 .experience-panel {
     min-height: 390px;
 
-    border-radius: 25px;
-
     overflow: hidden;
 
-    border:
-        1px solid rgba(255,255,255,0.08);
+    border-radius: 25px;
 
     background:
         radial-gradient(
@@ -1334,6 +1438,9 @@ img {
         ),
         rgba(255,255,255,0.025);
 
+    border:
+        1px solid rgba(255,255,255,0.08);
+
     box-shadow:
         0 35px 80px rgba(0,0,0,0.25);
 }
@@ -1341,7 +1448,8 @@ img {
 .panel-top {
     height: 50px;
 
-    padding: 0 18px;
+    padding:
+        0 18px;
 
     display: flex;
 
@@ -1349,16 +1457,16 @@ img {
 
     gap: 8px;
 
+    color: #71778a;
+
     border-bottom:
         1px solid rgba(255,255,255,0.06);
 
-    color: #71778a;
-
     font-size: 8px;
 
-    letter-spacing: 1px;
-
     font-weight: 700;
+
+    letter-spacing: 1px;
 }
 
 .panel-dot {
@@ -1384,15 +1492,16 @@ img {
 .panel-main {
     min-height: 340px;
 
-    padding: 45px 35px;
+    padding:
+        45px 35px;
 
     display: flex;
-
-    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
+
+    flex-direction: column;
 
     text-align: center;
 }
@@ -1412,9 +1521,9 @@ img {
 }
 
 .sound-wave span {
-    display: block;
-
     width: 4px;
+
+    display: block;
 
     border-radius: 20px;
 
@@ -1492,17 +1601,18 @@ img {
 
     0%,
     100% {
-        transform: scaleY(0.65);
+        transform:
+            scaleY(0.65);
 
         opacity: 0.65;
     }
 
     50% {
-        transform: scaleY(1);
+        transform:
+            scaleY(1);
 
         opacity: 1;
     }
-
 }
 
 .panel-title {
@@ -1526,7 +1636,8 @@ img {
 
     height: 3px;
 
-    margin: 30px 0;
+    margin:
+        30px 0;
 
     border-radius: 10px;
 
@@ -1582,10 +1693,10 @@ img {
             #3d83ff
         );
 
-    font-size: 13px;
-
     box-shadow:
         0 12px 30px rgba(83,81,255,0.3);
+
+    font-size: 13px;
 }
 
 
@@ -1607,28 +1718,28 @@ img {
 
     border-radius: 23px;
 
-    border:
-        1px solid rgba(255,255,255,0.07);
-
     background:
         linear-gradient(
             135deg,
             rgba(255,255,255,0.045),
             rgba(255,255,255,0.015)
         );
+
+    border:
+        1px solid rgba(255,255,255,0.07);
 }
 
 .about-image {
     aspect-ratio: 1;
 
+    overflow: hidden;
+
     border-radius: 18px;
 
-    overflow: hidden;
+    background: #10111a;
 
     border:
         1px solid rgba(255,255,255,0.08);
-
-    background: #10111a;
 }
 
 .about-image img {
@@ -1691,12 +1802,9 @@ img {
 
     padding: 27px;
 
-    border-radius: 19px;
-
     overflow: hidden;
 
-    border:
-        1px solid rgba(255,255,255,0.08);
+    border-radius: 19px;
 
     background:
         linear-gradient(
@@ -1705,6 +1813,9 @@ img {
             rgba(255,255,255,0.018)
         );
 
+    border:
+        1px solid rgba(255,255,255,0.08);
+
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
@@ -1712,10 +1823,11 @@ img {
 }
 
 .download-card:hover {
-    transform: translateY(-6px);
+    transform:
+        translateY(-6px);
 
     border-color:
-        rgba(140,120,255,0.3);
+        rgba(140,120,255,0.30);
 
     box-shadow:
         0 25px 60px rgba(0,0,0,0.28);
@@ -1789,6 +1901,8 @@ img {
 .download-platform {
     display: block;
 
+    margin-bottom: 7px;
+
     color: #777c8f;
 
     font-size: 8px;
@@ -1796,16 +1910,14 @@ img {
     font-weight: 800;
 
     letter-spacing: 1.6px;
-
-    margin-bottom: 7px;
 }
 
 .download-card h3 {
+    margin-bottom: 8px;
+
     font-size: 20px;
 
     letter-spacing: -0.7px;
-
-    margin-bottom: 8px;
 }
 
 .download-card p {
@@ -1837,8 +1949,8 @@ img {
 .download-arrow {
     position: absolute;
 
-    right: 23px;
     top: 23px;
+    right: 23px;
 
     width: 34px;
     height: 34px;
@@ -1863,7 +1975,7 @@ img {
 
 .download-card:hover .download-arrow {
     transform:
-        translate(3px, -3px);
+        translate(3px,-3px);
 }
 
 .download-note {
@@ -1898,15 +2010,17 @@ img {
         1px solid rgba(255,255,255,0.06);
 
     background:
-        rgba(3,4,8,0.5);
+        rgba(3,4,8,0.50);
 }
 
 .footer-container {
-    width: min(1180px, calc(100% - 40px));
+    width:
+        min(1180px, calc(100% - 40px));
 
     min-height: 105px;
 
-    margin: auto;
+    margin:
+        0 auto;
 
     display: grid;
 
@@ -1942,30 +2056,25 @@ img {
 .footer-brand span {
     display: block;
 
+    margin-top: 3px;
+
     color: #606576;
 
     font-size: 8px;
-
-    margin-top: 3px;
 }
+
+
+/* =========================================================
+   REMOVE DUPLICATE BOTTOM NAVIGATION
+   ========================================================= */
+
+/*
+   The main navigation is now ONLY at the top.
+   Any repeated footer navigation links are hidden.
+*/
 
 .footer-links {
-    display: flex;
-
-    gap: 22px;
-}
-
-.footer-links a {
-    color: #686d7e;
-
-    font-size: 9px;
-
-    transition:
-        color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: #b3b6c4;
+    display: none !important;
 }
 
 .footer-copy {
@@ -1984,13 +2093,26 @@ img {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 950px) {
 
+    .navbar {
+        width:
+            calc(100% - 30px);
+
+        top: 15px;
+    }
+
     .nav-links {
-        display: none;
+        gap: 18px;
+
+        margin-right: 15px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
     }
 
     .hero {
@@ -2000,7 +2122,7 @@ img {
 
         padding-top: 125px;
 
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
 
     .hero-content {
@@ -2021,12 +2143,14 @@ img {
     }
 
     .hero-visual {
-        height: 470px;
+        height: 600px;
 
-        margin-top: 10px;
+        margin-top: 20px;
+    }
 
-        padding-top: 35px;
-        padding-bottom: 35px;
+    .features-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .experience-section {
@@ -2035,55 +2159,69 @@ img {
         gap: 45px;
     }
 
-    .features-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
     .about-card {
         grid-template-columns:
             160px 1fr;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 650px) {
 
-    .nav-container {
-        width:
-            min(100% - 28px, 1180px);
+    .navbar {
+        top: 12px;
 
-        height: 68px;
+        width:
+            calc(100% - 22px);
+
+        height: 59px;
+
+        border-radius: 18px;
+    }
+
+    .nav-container {
+        padding:
+            0 8px 0 12px;
     }
 
     .brand {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .brand-logo {
         width: 31px;
         height: 31px;
+
+        border-radius: 9px;
+    }
+
+    .nav-links {
+        display: none;
     }
 
     .nav-button {
-        padding: 9px 12px;
+        padding:
+            8px 11px;
 
-        font-size: 11px;
+        border-radius: 10px;
+
+        font-size: 9px;
     }
 
 
-    /* ---------- HERO ---------- */
+    /* ---------------- HERO ---------------- */
 
     .hero {
         width:
-            min(100% - 28px, 1180px);
+            calc(100% - 28px);
 
         padding-top: 105px;
+
+        padding-bottom: 40px;
     }
 
     .hero h1 {
@@ -2097,6 +2235,17 @@ img {
         font-size: 13px;
     }
 
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
     .hero-meta {
         flex-wrap: wrap;
 
@@ -2108,20 +2257,20 @@ img {
     }
 
 
-    /* ---------- SMALLER APP PREVIEW ---------- */
+    /* ---------------- APP AREA ---------------- */
 
     .hero-visual {
-        height: 440px;
+        height: 510px;
 
-        padding-top: 35px;
-        padding-bottom: 35px;
+        margin-top: 10px;
+
+        padding-top: 105px;
+
+        padding-bottom: 105px;
     }
 
     .app-window {
-        width: 235px;
-
-        margin-top: 8px;
-        margin-bottom: 8px;
+        width: 230px;
     }
 
     .ring-one {
@@ -2130,33 +2279,38 @@ img {
     }
 
     .ring-two {
-        width: 350px;
-        height: 350px;
+        width: 365px;
+        height: 365px;
     }
 
 
-    /* ---------- FLOATING CARDS ---------- */
+    /* ---------------- FLOATING CARDS ---------------- */
 
     .card-top {
-        top: 35px;
+        top: 18px;
 
-        right: 0;
+        right: -2px;
+
+        transform:
+            scale(0.90);
     }
 
     .card-bottom {
-        bottom: 35px;
+        bottom: 18px;
 
-        left: 0;
+        left: -2px;
+
+        transform:
+            scale(0.90);
     }
 
-    .floating-card {
-        transform: scale(0.9);
-    }
 
-
-    /* ---------- PRODUCT BAR ---------- */
+    /* ---------------- PRODUCT BAR ---------------- */
 
     .product-bar {
+        width:
+            calc(100% - 28px);
+
         flex-wrap: wrap;
 
         justify-content: center;
@@ -2169,11 +2323,11 @@ img {
     }
 
 
-    /* ---------- SECTIONS ---------- */
+    /* ---------------- SECTIONS ---------------- */
 
     .section {
         width:
-            min(100% - 28px, 1180px);
+            calc(100% - 28px);
 
         padding-top: 95px;
     }
@@ -2186,7 +2340,7 @@ img {
     }
 
 
-    /* ---------- FEATURES ---------- */
+    /* ---------------- FEATURES ---------------- */
 
     .features-grid {
         grid-template-columns: 1fr;
@@ -2197,7 +2351,7 @@ img {
     }
 
 
-    /* ---------- EXPERIENCE ---------- */
+    /* ---------------- EXPERIENCE ---------------- */
 
     .experience-panel {
         min-height: 330px;
@@ -2206,11 +2360,12 @@ img {
     .panel-main {
         min-height: 280px;
 
-        padding: 30px 20px;
+        padding:
+            30px 20px;
     }
 
 
-    /* ---------- ABOUT ---------- */
+    /* ---------------- ABOUT ---------------- */
 
     .about-card {
         grid-template-columns: 1fr;
@@ -2221,7 +2376,8 @@ img {
     .about-image {
         width: 150px;
 
-        margin: auto;
+        margin:
+            0 auto;
     }
 
     .about-content {
@@ -2229,19 +2385,20 @@ img {
     }
 
 
-    /* ---------- DOWNLOAD ---------- */
+    /* ---------------- DOWNLOAD ---------------- */
 
     .download-grid {
         grid-template-columns: 1fr;
     }
 
 
-    /* ---------- FOOTER ---------- */
+    /* ---------------- FOOTER ---------------- */
 
     .footer-container {
         grid-template-columns: 1fr;
 
-        padding: 28px 0;
+        padding:
+            28px 0;
 
         text-align: center;
     }
@@ -2250,19 +2407,70 @@ img {
         justify-content: center;
     }
 
-    .footer-links {
-        justify-content: center;
-    }
-
     .footer-copy {
         text-align: center;
     }
-
 }
 
 
 /* =========================================================
-   ACCESSIBILITY — REDUCED MOTION
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .navbar {
+        width:
+            calc(100% - 16px);
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .nav-button {
+        padding:
+            8px 9px;
+
+        font-size: 8px;
+    }
+
+    .hero-visual {
+        height: 480px;
+
+        padding-top: 95px;
+
+        padding-bottom: 95px;
+    }
+
+    .app-window {
+        width: 205px;
+    }
+
+    .ring-one {
+        width: 270px;
+        height: 270px;
+    }
+
+    .ring-two {
+        width: 320px;
+        height: 320px;
+    }
+
+    .floating-card {
+        padding:
+            8px 9px;
+    }
+
+    .mini-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -2283,5 +2491,4 @@ img {
         transition-duration:
             0.01ms !important;
     }
-
 }
