@@ -1,4 +1,4 @@
-```javascript
+
 // Current year
 document.getElementById("year").textContent =
     new Date().getFullYear();
@@ -79,5 +79,4 @@ cards.forEach(card => {
 
     observer.observe(card);
 
-});
-```
+}
